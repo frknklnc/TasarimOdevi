@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Milwaukee Power Tools</string>
+    <string name="price">$ 449</string>
+    <string name="modelName">M18 FUEL™ Rotary Hammer</string>
+    <string name="about">About</string>
+    <string name="modelAbout">FUEL™ Technology: Delivers faster than corded speed, corded durability, and all day work on one charge.</string>
+    <string name="button">BUY NOW</string>
+    <string name="ratio">4.9</string>
+    <string name="ratioReviews">(586 Reviews)</string>
+    <string name="warranty">WARRANTY</string>
+    <string name="warrantyYears">5 YEARS</string>
+    <string name="cordless">CORDLESS POWER!</string>
+
+
+
+
+</resources>

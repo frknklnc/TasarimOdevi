@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Milwaukee El Aletleri</string>
+    <string name="price">7700 ₺</string>
+    <string name="modelName">M18 FUEL™ Darbeli Matkap</string>
+    <string name="about">Ürün Açıklaması</string>
+    <string name="modelAbout">FUEL™ Teknolojisi: Kabloludan daha hızlı, kablolu dayanıklılığında ve tek şarjla tüm gün çalışma sağlar.</string>
+    <string name="button">ŞİMDİ SATIN AL</string>
+    <string name="ratio">4.9</string>
+    <string name="ratioReviews">(586 Yorum)</string>
+    <string name="warranty">GARANTİ</string>
+    <string name="warrantyYears">5 YIL</string>
+    <string name="cordless">KABLOSUZ GÜÇ!</string>
+
+
+
+</resources>
