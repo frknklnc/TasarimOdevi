@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.calismayapisi.databinding.ActivityOyunEkraniMainBinding
 
-class OyunEkraniMainActivity : AppCompatActivity() {
+class OyunEkraniActivity : AppCompatActivity() {
     private lateinit var tasarim:ActivityOyunEkraniMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,10 +23,16 @@ class OyunEkraniMainActivity : AppCompatActivity() {
         Log.e("Gelen Boy",gelenBoy.toString())
         Log.e("Gelen Bekar",gelenBekar.toString())
 
+        val gelenNesne = intent.getSerializableExtra("nesne") as Kisiler
+        Log.e("Gelen Nesne Ad",gelenNesne.ad)
+        Log.e("Gelen Nesne Yaş",gelenNesne.yas.toString())
+        Log.e("Gelen Nesne Boy",gelenNesne.boy.toString())
+        Log.e("Gelen Nesne Bekar",gelenNesne.bekar.toString())
+
 
 
         tasarim.buttonBitir.setOnClickListener {
-            val intent = Intent(this@OyunEkraniMainActivity,SonucEkraniActivity::class.java)
+            val intent = Intent(this@OyunEkraniActivity,SonucEkraniActivity::class.java)
             startActivity(intent)
             finish()
 

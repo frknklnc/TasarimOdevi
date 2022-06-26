@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.calismayapisi.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_oyun_ekrani_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tasarim:ActivityMainBinding
@@ -19,11 +16,16 @@ class MainActivity : AppCompatActivity() {
         //Backstack - pop
 
         tasarim.buttonBasla.setOnClickListener {
-            val intent = Intent(this@MainActivity,OyunEkraniMainActivity::class.java)
+            val intent = Intent(this@MainActivity,OyunEkraniActivity::class.java)
             intent.putExtra("ad","Ahmet")
             intent.putExtra("yas",23)
             intent.putExtra("boy",1.78)
             intent.putExtra("bekar",true)
+
+            val kisi = Kisiler("Mehmet", 34,1.97,false)
+            intent.putExtra("nesne",kisi)
+
+
             startActivity(intent)
             //Snackbar.make(it,"Merhaba",Snackbar.LENGTH_SHORT).show()
         }
