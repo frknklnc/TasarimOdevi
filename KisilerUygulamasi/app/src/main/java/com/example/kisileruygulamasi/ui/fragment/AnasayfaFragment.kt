@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -14,46 +16,39 @@ import com.example.kisileruygulamasi.R
 import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
+import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaFragmentViewModel
+import com.example.kisileruygulamasi.utils.gecisYap
 import com.google.android.material.snackbar.Snackbar
 
 
 class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
     private lateinit var tasarim:FragmentAnasayfaBinding
+    private lateinit var viewModel: AnasayfaFragmentViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        tasarim = FragmentAnasayfaBinding.inflate(inflater, container, false)
-
-        tasarim.toolbarAnasayfa.title = "Kişiler"
+        tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_anasayfa, container, false)
+        tasarim.anasayfaFragment = this
+        tasarim.anasayfaToolbarBaslik = "Kişiler"
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarAnasayfa)//activitydeki özelliklere erişmemizi sağlar
 
-        tasarim.rv.layoutManager = LinearLayoutManager(requireContext())
-        //tasarim.rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
-        //instagram hikayeler bu şekilde yapılmıstır.
-
-        val kisilerListesi = ArrayList<Kisiler>()
-        val k1 = Kisiler(1,"Ahmet","1111")
-        val k2 = Kisiler(2,"Zeynep","2222")
-        val k3 = Kisiler(3,"Beyza","3333")
-        kisilerListesi.add(k1)
-        kisilerListesi.add(k2)
-        kisilerListesi.add(k3)
-
-        val adapter = KisilerAdapter(requireContext(),kisilerListesi)
-        tasarim.rv.adapter = adapter
-
-
-        tasarim.fab.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+        viewModel.kisilerListesi.observe(viewLifecycleOwner){
+            val adapter = KisilerAdapter(requireContext(),it,viewModel)
+            tasarim.kisilerAdapter = adapter
         }
 
+
+
         return tasarim.root
+    }
 
-
-
+    fun fabTikla(view:View){
+        Navigation.gecisYap(view,R.id.kisiKayitGecis)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)//activityde gerekli değil fragmentta kullanıılır.
+        val tempViewModel:AnasayfaFragmentViewModel by viewModels()
+        viewModel = tempViewModel
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -81,17 +76,15 @@ class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
     }*/
 
     override fun onQueryTextSubmit(query: String): Boolean { //arama iconu seçilirse çalışır.
-        ara(query)
+        viewModel.ara(query)
         return true
     }
 
     override fun onQueryTextChange(newText: String): Boolean { //harf girdikçe ve sildikçe çalışır.
-        ara(newText)
+        viewModel.ara(newText)
         return true
     }
-    fun ara(aramaKelimesi:String){
-        Log.e("Kişi ara",aramaKelimesi)
-    }
+
 
 
 }

@@ -34,6 +34,8 @@ android {
         jvmTarget = '1.8'
     }
 }
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 
 dependencies {
 

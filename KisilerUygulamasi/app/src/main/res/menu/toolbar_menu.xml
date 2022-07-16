@@ -10,6 +10,5 @@
         app:showAsAction="always|collapseActionView" />
     <item
         android:id="@+id/action_cikis"
-        android:title="Çıkış"
-        app:showAsAction="never" />
+        android:title="Çıkış" />
 </menu>

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.detaylirecyclerview.databinding.CardTasarimBinding
 import com.example.detaylirecyclerview.databinding.FragmentAnasayfaBinding
@@ -37,7 +38,8 @@ class FilmlerAdapter(var mContext: Context, var filmlerListesi:List<Filmler>)
             Snackbar.make(it,"${film.filmAdi} sepete eklendi.", Snackbar.LENGTH_SHORT).show()
         }
         t.cardViewFilm.setOnClickListener {
-
+            val gecis = AnasayfaFragmentDirections.detayGecis(film = film)
+            Navigation.findNavController(it).navigate(gecis)
         }
 
         t.imageViewDahaFazla.setOnClickListener {

@@ -6,39 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.kisileruygulamasi.R
 import com.example.kisileruygulamasi.databinding.FragmentKisiDetayBinding
+import com.example.kisileruygulamasi.ui.viewmodel.KisiDetayFragmentViewModel
 
 
 class KisiDetayFragment : Fragment() {
     private lateinit var tasarim:FragmentKisiDetayBinding
+    private lateinit var viewModel: KisiDetayFragmentViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        tasarim = FragmentKisiDetayBinding.inflate(inflater, container, false)
-
-        tasarim.toolbarKisiDetay.title = "Kişi Detay"
+        tasarim = DataBindingUtil.inflate(inflater,R.layout.fragment_kisi_detay, container, false)
+        tasarim.kisiDetayToolbarBaslik = "Kişi Detay"
 
         val bundle:KisiDetayFragmentArgs by navArgs()
         val gelenKisi = bundle.kisi
-
-        tasarim.editTextKisiAd.setText(gelenKisi.kisi_ad)
-        tasarim.editTextKisiTel.setText(gelenKisi.kisi_tel)
-
-        tasarim.buttonGuncelle.setOnClickListener {
-            val kisi_ad = tasarim.editTextKisiAd.text.toString()
-            val kisi_tel = tasarim.editTextKisiTel.text.toString()
-
-            guncelle(gelenKisi.kisi_id,kisi_ad,kisi_tel)
-        }
-
+        tasarim.kisiNesnesi = gelenKisi
 
         return tasarim.root
-
-
-
     }
 
-    fun guncelle(kisi_id:Int,kisi_ad: String,kisi_tel:String){
-        Log.e("Kişi Güncelle","$kisi_id - $kisi_ad - $kisi_tel")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val tempViewModel:KisiDetayFragmentViewModel by viewModels()
+        viewModel = tempViewModel
+    }
+
+    fun butonGuncelle(kisi_id:Int,kisi_ad: String,kisi_tel:String){
+        viewModel.guncelle(kisi_id,kisi_ad,kisi_tel)
     }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="my_value_icon_size">30dp</dimen>
+    <dimen name="design_bottom_navigation_height" >60dp</dimen>
+    <dimen name="design_navigation_icon_size" >48dp</dimen>
+</resources>
+
