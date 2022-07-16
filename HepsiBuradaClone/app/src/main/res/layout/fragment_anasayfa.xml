@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/searchView"
         android:layout_width="378dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_margin="5dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="24dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="31dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/kamera"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,8 +32,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="31dp"
-            android:layout_height="37dp"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/buyutec"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -88,9 +88,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
             android:text="hepsiburada"
             android:textColor="@color/anaTuruncu"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="91dp"
             tools:layout_editor_absoluteY="10dp" />
@@ -120,8 +121,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="185dp"
-        android:layout_height="42dp"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
         android:background="@drawable/arkaplan2"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
         app:layout_constraintHorizontal_bias="0.5"
@@ -132,8 +133,8 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
             android:text="SANA ÖZEL"
             android:textColor="@color/anaTuruncu"
             android:textSize="12sp"
@@ -145,19 +146,20 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="2 kampanya var"
+            android:layout_marginStart="12dp"
+            android:text="1 kupon fırsatı var"
+            android:textColor="@color/yaziGri"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout5"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/arkaplan3"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -168,8 +170,10 @@
                 android:src="@drawable/diamond"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -177,8 +181,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="185dp"
-        android:layout_height="42dp"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
         android:background="@drawable/arkaplan2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -189,8 +193,8 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
             android:text="4x4 İNDİRİM"
             android:textColor="@color/anaTuruncu"
             android:textSize="12sp"
@@ -202,19 +206,20 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="12dp"
             android:text="8 kampanya var"
+            android:textColor="@color/yaziGri"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout6"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/arkaplan3"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -278,9 +283,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="161dp"
+        android:layout_width="155dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/arkaplan4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -289,6 +294,7 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="-8dp"
             android:layout_marginTop="3dp"
             android:src="@drawable/hepsipay"
             app:layout_constraintEnd_toEndOf="parent"
