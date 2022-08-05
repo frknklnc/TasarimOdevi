@@ -19,7 +19,9 @@ import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaFragmentViewModel
 import com.example.kisileruygulamasi.utils.gecisYap
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
     private lateinit var tasarim:FragmentAnasayfaBinding
@@ -84,6 +86,12 @@ class AnasayfaFragment : Fragment(),SearchView.OnQueryTextListener {
         viewModel.ara(newText)
         return true
     }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.kisileriYukle()
+    }
+
 
 
 
